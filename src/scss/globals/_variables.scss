@@ -1,0 +1,29 @@
+@use "../util/" as u;
+
+:root {
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+
+  /* ### Neutral */
+
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: #676d7e;
+  --grey-500: #48556a;
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+
+  /* ##font family */
+  --ff-primary: "Barlow Semi Condensed", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  --fw-300: 400;
+  --fw-400: 500;
+  --fw-700: 600;
+  /* ## font size */
+
+  // --fs-300: u.rem(11); /* 11px */
+  // --fs-400: u.rem(13); /* 13px */
+  // --fs-500: u.rem(20); /* 20px */
+}

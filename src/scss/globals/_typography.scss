@@ -1,0 +1,21 @@
+@use "../util/" as u;
+
+h1,
+h2 {
+  line-height: 1;
+}
+h2,
+p,
+.position {
+  font-weight: var(--fw-400);
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(11), u.rem(13));
+}
+p {
+  font-weight: var(--fw-700);
+}
+
+.testimonial > p:first-of-type {
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(13), u.rem(20));
+  line-height: 1.2;
+  font-weight: var(--fw-400);
+}

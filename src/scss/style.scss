@@ -1,0 +1,86 @@
+@use "globals";
+@use "util/mixins" as u;
+.testimonial-wrapper {
+  // padding-block: 1rem;
+  width: min(100% - 2rem, 70rem);
+  margin: auto;
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+
+  @include u.mq(medium) {
+    grid-template-areas:
+      "one one four four"
+      "one one four four"
+      "two two five five"
+      "three three five five";
+  }
+
+  @include u.mq(large) {
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
+}
+
+.testimonial {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  .testimonial_header {
+    display: flex;
+    gap: 1rem;
+  }
+}
+.testimonial:first-child {
+  grid-area: one;
+}
+
+.testimonial:nth-child(2) {
+  grid-area: two;
+}
+
+.testimonial:nth-child(3) {
+  grid-area: three;
+}
+
+.testimonial:nth-child(4) {
+  grid-area: four;
+}
+
+.testimonial:nth-child(5) {
+  grid-area: five;
+}
+
+.testimonial .image {
+  width: 1.75rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+.testimonial.quote {
+  @include u.mq(large) {
+    background-image: url(../../assets/images/quote.svg);
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+  }
+}
+
+.testimonial:not(.white) .name {
+  color: var(--white);
+}
+
+.testimonial:not(.white) > p:first-of-type {
+  color: var(--white);
+}
