@@ -1,3 +1,5 @@
+@use "../util/" as u;
+
 @layer reset {
   *,
   *::before,
@@ -78,6 +80,8 @@ body {
   text-wrap: balance;
   display: grid;
   align-items: center;
+  padding-block: 2rem;
+  @include u.mq(large) {
+    padding-block: 0
+  }
 }
-
-

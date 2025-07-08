@@ -8,7 +8,7 @@ h2,
 p,
 .position {
   font-weight: var(--fw-400);
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(11), u.rem(13));
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(12), u.rem(13));
 }
 p {
   font-weight: var(--fw-700);
