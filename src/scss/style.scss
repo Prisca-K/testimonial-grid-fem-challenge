@@ -69,6 +69,8 @@
 
 .testimonial:nth-child(4) {
   grid-area: four;
+  --border-type: solid;
+  --color: var(--purple-500);
 }
 
 .testimonial:nth-child(5) {
