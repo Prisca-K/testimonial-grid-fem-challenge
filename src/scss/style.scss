@@ -1,5 +1,6 @@
 @use "globals";
-@use "util/mixins" as u;
+@use "sass:math";
+@use "util/" as u;
 .testimonial-wrapper {
   // padding-block: 1rem;
   width: min(100% - 2rem, 70rem);
@@ -37,13 +38,29 @@
     display: flex;
     gap: 1rem;
   }
+  .image {
+    border: 2px var(--border-type, solid) var(--color, white);
+    width: u.rem(math.div(56, 2));
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
 }
 .testimonial:first-child {
   grid-area: one;
+  --border-type: solid;
+  --color: var(--purple-300);
 }
 
 .testimonial:nth-child(2) {
   grid-area: two;
+  --border-type: solid;
+  --color: var(--white);
 }
 
 .testimonial:nth-child(3) {
@@ -58,17 +75,6 @@
   grid-area: five;
 }
 
-.testimonial .image {
-  width: 1.75rem;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-}
 .testimonial.quote {
   @include u.mq(large) {
     background-image: url(../../assets/images/quote.svg);
