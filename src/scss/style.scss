@@ -1,6 +1,7 @@
 @use "globals";
 @use "sass:math";
 @use "util/" as u;
+
 .testimonial-wrapper {
   // padding-block: 1rem;
   width: min(100% - 2rem, 70rem);
@@ -34,11 +35,21 @@
 .testimonial {
   padding: 2rem;
   border-radius: 0.5rem;
-  .testimonial_header {
-    display: flex;
-    gap: 1rem;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.10);
+  > *:where(:not(:first-child)) {
+    margin-top: var(--flow-spacer, 1em);
   }
-  .image {
+
+  &__header {
+    display: flex;
+    gap: var(--gap, 1rem);
+  }
+
+  &__:not(&--white) .name {
+    color: var(--white);
+  }
+
+  &__image {
     border: 2px var(--border-type, solid) var(--color, white);
     width: u.rem(math.div(56, 2));
     aspect-ratio: 1 / 1;
@@ -50,45 +61,46 @@
       border-radius: 50%;
     }
   }
-}
-.testimonial:first-child {
-  grid-area: one;
-  --border-type: solid;
-  --color: var(--purple-300);
-}
 
-.testimonial:nth-child(2) {
-  grid-area: two;
-  --border-type: solid;
-  --color: var(--white);
-}
-
-.testimonial:nth-child(3) {
-  grid-area: three;
-}
-
-.testimonial:nth-child(4) {
-  grid-area: four;
-  --border-type: solid;
-  --color: var(--purple-500);
-}
-
-.testimonial:nth-child(5) {
-  grid-area: five;
-}
-
-.testimonial.quote {
-  @include u.mq(large) {
-    background-image: url(../../assets/images/quote.svg);
-    background-repeat: no-repeat;
-    background-position: top right 10%;
+  &:first-child {
+    grid-area: one;
+    --border-type: solid;
+    --color: var(--purple-300);
   }
-}
 
-.testimonial:not(.white) .name {
-  color: var(--white);
-}
+  &:nth-child(2) {
+    grid-area: two;
+    --border-type: solid;
+    --color: var(--white);
+  }
 
-.testimonial:not(.white) > p:first-of-type {
-  color: var(--white);
+  &:nth-child(3) {
+    grid-area: three;
+  }
+
+  &:nth-child(4) {
+    grid-area: four;
+    --border-type: solid;
+    --color: var(--purple-500);
+  }
+
+  &:nth-child(5) {
+    grid-area: five;
+  }
+
+  &.quote {
+    @include u.mq(large) {
+      background-image: url(../../assets/images/quote.svg);
+      background-repeat: no-repeat;
+      background-position: top right 10%;
+    }
+  }
+  &:hover {
+    transform: translateY(-0.25rem);
+    transition: all 0.3s ease;
+  }
+
+  &:not(&--white) > p:first-of-type {
+    color: var(--white);
+  }
 }

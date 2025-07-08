@@ -1,42 +1,27 @@
-.purple-50 {
-  background-color: var(--purple-50);
-}
-.purple-300 {
-  background-color: var(--purple-300);
-}
-.purple-500 {
-  background-color: var(--purple-500);
-}
-.white {
-  background-color: var(--white);
-}
-.grey-100 {
-  background-color: var(--grey-100);
-}
-.grey-200 {
-  background-color: var(--grey-200);
-}
-.grey-400 {
-  background-color: var(--grey-400);
-}
-.grey-500 {
-  background-color: var(--grey-500);
-}
-.dark-blue {
-  background-color: var(--dark-blue);
-}
-.border-purple {
-  border: 2px solid var(--purple-500);
-}
-.dark-text {
-  color: var(--grey-500);
-}
+/* testimonial colors */
+.testimonial {
+  &--purple {
+    background-color: var(--purple-500);
+  }
 
-.flow > *:where(:not(:first-child)) {
-  margin-top: var(--flow-spacer, 1em);
-}
+  &--white {
+    background-color: var(--white);
+    color: var(--grey-500);
+  }
+  .grey-100 {
+    background-color: var(--grey-100);
+  }
+  .grey-200 {
+    background-color: var(--grey-200);
+  }
+  &--grey-light {
+    background-color: var(--grey-400);
+  }
+  &--grey-dark {
+    background-color: var(--grey-500);
+  }
+  &--dark-blue {
+    background-color: var(--dark-blue);
+  }
 
-.flex {
-  display: flex;
-  gap: var(--gap, 1rem);
 }
