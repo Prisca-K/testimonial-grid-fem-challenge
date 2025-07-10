@@ -1,0 +1,106 @@
+@use "globals";
+@use "sass:math";
+@use "util/" as u;
+
+.testimonial-wrapper {
+  // padding-block: 1rem;
+  width: min(100% - 2rem, 70rem);
+  margin: auto;
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+
+  @include u.mq(medium) {
+    grid-template-areas:
+      "one one four four"
+      "one one four four"
+      "two two five five"
+      "three three five five";
+  }
+
+  @include u.mq(large) {
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
+}
+
+.testimonial {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.10);
+  > *:where(:not(:first-child)) {
+    margin-top: var(--flow-spacer, 1em);
+  }
+
+  &__header {
+    display: flex;
+    gap: var(--gap, 1rem);
+  }
+
+  &__:not(&--white) .name {
+    color: var(--white);
+  }
+
+  &__image {
+    border: 2px var(--border-type, solid) var(--color, white);
+    width: u.rem(math.div(56, 2));
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &:first-child {
+    grid-area: one;
+    --border-type: solid;
+    --color: var(--purple-300);
+  }
+
+  &:nth-child(2) {
+    grid-area: two;
+    --border-type: solid;
+    --color: var(--white);
+  }
+
+  &:nth-child(3) {
+    grid-area: three;
+  }
+
+  &:nth-child(4) {
+    grid-area: four;
+    --border-type: solid;
+    --color: var(--purple-500);
+  }
+
+  &:nth-child(5) {
+    grid-area: five;
+  }
+
+  &.quote {
+    @include u.mq(large) {
+      background-image: url(../../assets/images/quote.svg);
+      background-repeat: no-repeat;
+      background-position: top right 10%;
+    }
+  }
+  &:hover {
+    transform: translateY(-0.25rem);
+    transition: all 0.3s ease;
+  }
+
+  &:not(&--white) > p:first-of-type {
+    color: var(--white);
+  }
+}

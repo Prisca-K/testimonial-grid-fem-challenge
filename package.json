@@ -1,0 +1,18 @@
+{
+  "name": "testimonial-grid",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Testimonial Grid on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7).",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.89.2",
+    "vite": "^7.0.4"
+  }
+}

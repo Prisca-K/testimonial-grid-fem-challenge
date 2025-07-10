@@ -1,0 +1,27 @@
+/* testimonial colors */
+.testimonial {
+  &--purple {
+    background-color: var(--purple-500);
+  }
+
+  &--white {
+    background-color: var(--white);
+    color: var(--grey-500);
+  }
+  .grey-100 {
+    background-color: var(--grey-100);
+  }
+  .grey-200 {
+    background-color: var(--grey-200);
+  }
+  &--grey-light {
+    background-color: var(--grey-400);
+  }
+  &--grey-dark {
+    background-color: var(--grey-500);
+  }
+  &--dark-blue {
+    background-color: var(--dark-blue);
+  }
+
+}
