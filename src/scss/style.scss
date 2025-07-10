@@ -35,7 +35,7 @@
 .testimonial {
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   > *:where(:not(:first-child)) {
     margin-top: var(--flow-spacer, 1em);
   }
@@ -95,9 +95,11 @@
       background-position: top right 10%;
     }
   }
-  &:hover {
-    transform: translateY(-0.25rem);
-    transition: all 0.3s ease;
+  @include u.mq(large) {
+    &:hover {
+      transform: translateY(-0.25rem);
+      transition: all 0.3s ease;
+    }
   }
 
   &:not(&--white) > p:first-of-type {
