@@ -15,7 +15,7 @@ p {
 }
 
 .testimonial > p:first-of-type {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(13), u.rem(18));
+  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(14), u.rem(18));
   line-height: 1.2;
   font-weight: var(--fw-400);
 }
